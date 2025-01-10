@@ -14,6 +14,7 @@ public class Hra {
 
         //rozpadla chata
         public int rozpadlachata;
+        public int carodejnice;
         public int kouzla;
         public int kouzlo;
 
@@ -177,270 +178,336 @@ public class Hra {
                 System.out.println("Vybral jsi si Kouzelnou hůlku.");
                 System.out.println("(Prozkoumej městečko a zjisti o ní víc informací)");
                 break;
-                case 2:
-                    System.out.println("Vybral jsi si Neviditelný plášť.");
-                    System.out.println("(Prozkoumej městečko a zjisti o něm víc informací)");
-                    break;
-                    case 3:
-                        System.out.println("Vybral jsi si Kámen vzkříšení.");
-                        System.out.println("(Prozkoumej městečko a zjisti o něm víc informací)");
-                        break;
+            case 2:
+                System.out.println("Vybral jsi si Neviditelný plášť.");
+                System.out.println("(Prozkoumej městečko a zjisti o něm víc informací)");
+                break;
+            case 3:
+                System.out.println("Vybral jsi si Kámen vzkříšení.");
+                System.out.println("(Prozkoumej městečko a zjisti o něm víc informací)");
+                break;
         }
         this.posedleMesteckoNamesti();
     }//hotovo
-        public void posedleMesteckoNamesti(){
-            System.out.println("Došel jsi na náměstí.");
-            System.out.println("Spatřil jsi 4 domy.");
+    public void posedleMesteckoNamesti(){
+        System.out.println("Došel jsi na náměstí.");
+        System.out.println("Spatřil jsi 4 domy.");
+        System.out.println(" ");
+        System.out.println("Který prozkoumáš?.");
+        System.out.println(" ");
+        if (rozpadlachata == 1 && zabednenydum == 1 && tajemnajeskyne == 1 && hospoda == 1){
+            System.out.println("1. Rozpadlá Chata");
+            System.out.println("2. Zabedněný dům");
+            System.out.println("3. Tajemná jeskyně");
+            System.out.println("4. Hospoda");
+            System.out.println("5. Cesta do lesa");
             System.out.println(" ");
-            System.out.println("Který prozkoumáš?.");
-            System.out.println(" ");
-            if (rozpadlachata == 1 && zabednenydum == 1 && tajemnajeskyne == 1 && hospoda == 1){
-                System.out.println("1. Rozpadlá Chata");
-                System.out.println("2. Zabedněný dům");
-                System.out.println("3. Tajemná jeskyně");
-                System.out.println("4. Hospoda");
-                System.out.println("5. Cesta do lesa");
-                System.out.println(" ");
-                posedlemesteckodum = sc.nextInt();
-                sc.nextLine();
-                switch (posedlemesteckodum) {
-                    case 1:
-                        this.posedleMesteckoRozpadlaChata();
-                        break;
-                    case 2:
-                        this.posedleMesteckoZabednenyDum();
-                        break;
-                    case 3:
-                        this.posedleMesteckoTajemnaJeskyne();
-                        break;
-                    case 4:
-                        this.posedleMesteckoHospoda();
-                        break;
-                    case 5:
-                        this.cestaDoLesa();
-                        break;
-
-                }
-            }/*else if(unlockstaryhrad == 2){
-                System.out.println("1. Rozpadlá Chata");
-                System.out.println("2. Zabedněný dům");
-                System.out.println("3. Tajemná jeskyně");
-                System.out.println("4. Hospoda");
-                System.out.println("5. Cesta do lesa");
-                System.out.println("6. Starý hrad");
-                System.out.println(" ");
-                posedlemesteckodum = sc.nextInt();
-                sc.nextLine();
-                switch (posedlemesteckodum) {
-                    case 1:
-                        this.posedleMesteckoRozpadlaChata();
-                        break;
-                    case 2:
-                        this.posedleMesteckoZabednenyDum();
-                        break;
-                    case 3:
-                        this.posedleMesteckoTajemnaJeskyne();
-                        break;
-                    case 4:
-                        this.posedleMesteckoHospoda();
-                        break;
-                    case 5:
-                        this.cestaDoLesa();
-                        break;
-                    case 6:
-                        this.posedleMesteckoStaryHrad();
-                        break;
-                }
-            }*/else{
-                System.out.println("1. Rozpadlá Chata");
-                System.out.println("2. Zabedněný dům");
-                System.out.println("3. Tajemná jeskyně");
-                System.out.println("4. Hospoda");
-                System.out.println(" ");
-                posedlemesteckodum = sc.nextInt();
-                sc.nextLine();
-                switch (posedlemesteckodum) {
-                    case 1:
-                        this.posedleMesteckoRozpadlaChata();
-                        break;
-                    case 2:
-                        this.posedleMesteckoZabednenyDum();
-                        break;
-                    case 3:
-                        this.posedleMesteckoTajemnaJeskyne();
-                        break;
-                    case 4:
-                        this.posedleMesteckoHospoda();
-                        break;
-                }
-            }
-
-        }//hotovo
-
-        public void posedleMesteckoRozpadlaChata(){
-            rozpadlachata = 1;
-            System.out.println(" ");
-            System.out.println("Vešel jsi do rozpadlé chaty.");
-            System.out.println("V rohu místnosti stojí stará čarodějnice.");
-            System.out.println(" ");
-            if (item2 == 1){
-                System.out.println("Otočila se a zeptala se tě: 'Máš kouzelnou hůlku? Ano? S hůlkou se můžeš naučit mnoho kouzel. A stím ti můžu pomoct.'");
-
-                System.out.println("Jaké kouzlo se chceš naučit?");
-                System.out.println(" ");
-                System.out.println("1. Silné kouzlo");
-                System.out.println("(Kouzlo je silné ale nejde rychle vyslovit.)");
-                System.out.println("2. Rychlé kouzlo");
-                System.out.println("(Kouzlo jde rychle vyslovit ale není tak silné.) ");
-                System.out.println("3. Kouzlo zpomalení");
-                System.out.println("(Kouzlo zpomalí útočníka a dává ti čas na útěk.) ");
-                kouzla = sc.nextInt();
-                sc.nextLine();
-                switch (kouzla) {
-                    case 1:
-                        System.out.println("Naučil jsi se silné kouzlo.");
-                        kouzlo = 1;
-                        break;
-                    case 2:
-                        System.out.println("Naučil jsi se rychlé kouzlo.");
-                        kouzlo = 2;
-                        break;
-                    case 3:
-                        System.out.println("Naučil jsi se kouzlo zpomalení. ");
-                        kouzlo = 3;
-                        break;
-                }
-                this.posedleMesteckoNamesti();
-            }else{
-                System.out.println(" ");
-                System.out.println("Otočila se a zeptala se tě: 'Máš kouzelnou hůlku? Ne? Tak to ti nemám jak pomoct. Možná ti pomůžou jíní obyvatelé našeho městečka.'");
-                System.out.println(" ");
-                System.out.println("Vrátil jsi se na náměstí.");
-                System.out.println(" ");
-                this.posedleMesteckoNamesti();
-            }
-        }//hotovo
-        public void posedleMesteckoZabednenyDum(){
-            zabednenydum = 1;
-            System.out.println(" ");
-            System.out.println("Vešel jsi do zabedněného domu.");
-            System.out.println("U stolu sedí mladý muž s jehou dcerou.");
-            System.out.println("Řekl ti: 'Ahoj, jmenuji se Petr. Jak se jmenuješ ty?'");
-            jmeno = sc.nextLine();
-            System.out.println("'"+jmeno+", pěkné jméno. Přisedni si.'");
-            System.out.println("Sedneš si s nimi ke stolu?");
-            System.out.println("  ");
-            System.out.println("1. Ano");
-            System.out.println("2. Ne");
-            System.out.println("  ");
-            mladymuz = sc.nextInt();
+            posedlemesteckodum = sc.nextInt();
             sc.nextLine();
-            switch (mladymuz) {
+            switch (posedlemesteckodum) {
                 case 1:
-                    if (item2 == 2){
-                        System.out.println("  ");
-                        System.out.println("Přišel jsi ke stolu a Petr ti řekl: 'Co to tam máš? Neviditelný plášť? A kde jsi ho našel? Na zemi? ");
-                        System.out.println("Plášť patřil totiž starému čaroději. Bydlel s čarodějnicí v rozpadlé chatě. Když naše městečko napadli zlí duchové, musel s nimi jít bojovat a při boji ho ztratil.");
-                        System.out.println("Kde asi teď je? Jestli ho unesli duchové, tak je určitě na Starém hradě na konci městečka, ale nedoporučuju ti tam chodit bez kouzelné hůlky.");
-                        System.out.println("No nic o tom si můžeme popovídat jindy, ale te ti řeknu něco o neviditelném plášti. Je to velmi vzácná věc a jsou jen 3 na světě. Ve krajních situací ti může pomoci utéct.'");
-                        System.out.println("  ");
-                        System.out.println("Odešel jsi ze zabedněného domu.");
-                        this.posedleMesteckoNamesti();
-                    }/*else if (item2 == 1){
-                        unlockstaryhrad = 1;
-                        System.out.println("  ");
-                        System.out.println("Přišel jsi ke stolu a Petr ti řekl: 'Máš kouzelnou hůlku? Ano? Tak to už můžeš bez problémů zachránit starého čaroděje. Unesli ho duchové. A k jeho vysvobození jí potřebuješ.'");
-                        System.out.println("  ");
-                        System.out.println("Odešel jsi ze zabedněného domu.");
-                    }*/else{
-                        System.out.println("  ");
-                        System.out.println("Přišel jsi ke stolu a Petr ti řekl: 'Máš neviditelný plášť? Ne? Tak to ti nemůžu pomoci. Možná ti pomůžou jíní obyvatelé našeho městečka.'");
-                        System.out.println("  ");
-                        System.out.println("Odešel jsi ze zabedněného domu.");
-                        this.posedleMesteckoNamesti();
-                    }
+                    this.posedleMesteckoRozpadlaChata();
                     break;
                 case 2:
+                    this.posedleMesteckoZabednenyDum();
+                    break;
+                case 3:
+                    this.posedleMesteckoTajemnaJeskyne();
+                    break;
+                case 4:
+                    this.posedleMesteckoHospoda();
+                    break;
+                case 5:
+                    this.posedleMesteckoCestaDoLesa();
+                    break;
+
+            }
+        }else{
+            System.out.println("1. Rozpadlá Chata");
+            System.out.println("2. Zabedněný dům");
+            System.out.println("3. Tajemná jeskyně");
+            System.out.println("4. Hospoda");
+            System.out.println(" ");
+            posedlemesteckodum = sc.nextInt();
+            sc.nextLine();
+            switch (posedlemesteckodum) {
+                case 1:
+                    this.posedleMesteckoRozpadlaChata();
+                    break;
+                case 2:
+                    this.posedleMesteckoZabednenyDum();
+                    break;
+                case 3:
+                    this.posedleMesteckoTajemnaJeskyne();
+                    break;
+                case 4:
+                    this.posedleMesteckoHospoda();
+                    break;
+            }
+        }
+
+    }//hotovo
+
+    public void posedleMesteckoRozpadlaChata(){
+        rozpadlachata = 1;
+        System.out.println(" ");
+        System.out.println("Vešel jsi do rozpadlé chaty.");
+        System.out.println("V rohu místnosti stojí stará čarodějnice.");
+        System.out.println("Chceš k ní jít?");
+        System.out.println("  ");
+        System.out.println("1. Ano");
+        System.out.println("2. Ne");
+        System.out.println("  ");
+        carodejnice = sc.nextInt();
+        sc.nextLine();
+        switch (carodejnice) {
+            case 1:
+                if (item2 == 3 && skret == 1){
+                    System.out.println("Otočila se a zeptala se tě: Máš kouzelnou hůlku? Ne? A máš alespoň kámen vzkřísení? Ano? Tak to by jsi mi mohl s něčím pomoct.");
+                    System.out.println("Mého manžela odtáhli duchové na starý hrad. Od tamdud se všichni ti duchové vzali. Kámen budeš potřebovat, jen v největší nouzi.");
+                    System.out.println("Byl by jsi tak hodný a šel ho zachránit?");
+                    System.out.println("  ");
+                    System.out.println("1. Ano");
+                    System.out.println("2. Ne");
+                    System.out.println("  ");
+                    staryhrad = sc.nextInt();
+                    sc.nextLine();
+                    switch (staryhrad) {
+                        case 1:
+                            this.posedleMesteckoStaryHrad();
+                            break;
+                            case 2:
+
+                                break;
+                    }
+                }
+                if (item2 == 1){
+                    System.out.println("Otočila se a zeptala se tě: Máš kouzelnou hůlku? Ano? S hůlkou se můžeš naučit mnoho kouzel. A stím ti můžu pomoct.");
+                    System.out.println("Chceš naučit kouzlo?");
+                    System.out.println("  ");
+                    System.out.println("1. Ano");
+                    System.out.println("2. Ne");
+                    System.out.println("  ");
+                    /*System.out.println("1. Silné kouzlo");
+                    System.out.println("(Kouzlo je silné ale nejde rychle vyslovit.)");
+                    System.out.println("2. Rychlé kouzlo");
+                    System.out.println("(Kouzlo jde rychle vyslovit ale není tak silné.) ");
+                    System.out.println("3. Kouzlo zpomalení");
+                    System.out.println("(Kouzlo zpomalí útočníka a dává ti čas na útěk.) ");*/
+                    kouzlo = sc.nextInt();
+                    sc.nextLine();
+                    System.out.println("Naučil jsi se útočné kouzlo.");
+                    System.out.println("  ");
+                    /*switch (kouzla) {
+                        case 1:
+                            System.out.println("Naučil jsi se silné kouzlo.");
+                            kouzlo = 1;
+                            break;
+                        case 2:
+                            System.out.println("Naučil jsi se rychlé kouzlo.");
+                            kouzlo = 2;
+                            break;
+                        case 3:
+                            System.out.println("Naučil jsi se kouzlo zpomalení. ");
+                            kouzlo = 3;
+                            break;
+                    }*/
+                    this.posedleMesteckoNamesti();
+                }else{
+                    System.out.println(" ");
+                    System.out.println("Otočila se a zeptala se tě: Máš kouzelnou hůlku? Ne? Tak to ti nemám jak pomoct. Možná ti pomůžou jíní obyvatelé našeho městečka.");
+                    System.out.println("Přijď ke mě až zjistíš víc informací o tvém předmětu.");
+                    System.out.println(" ");
+                    System.out.println("Vrátil jsi se na náměstí.");
+                    System.out.println(" ");
+                    this.posedleMesteckoNamesti();
+                }
+                break;
+            case 2:
+                System.out.println("  ");
+                System.out.println("Odešel jsi z rozpadlé chaty.");
+                System.out.println("  ");
+                this.posedleMesteckoNamesti();
+                break;
+        }
+    }//hotovo
+    public void posedleMesteckoZabednenyDum(){
+        zabednenydum = 1;
+        System.out.println(" ");
+        System.out.println("Vešel jsi do zabedněného domu.");
+        System.out.println("U stolu sedí mladý muž s jehou dcerou.");
+        System.out.println("Řekl ti: Ahoj, jmenuji se Petr a tohle je moje dcera Alžběta. Jak se jmenuješ ty?");
+        jmeno = sc.nextLine();
+        System.out.println(jmeno+", pěkné jméno. Přisedni si.");
+        System.out.println("Sedneš si s nimi ke stolu?");
+        System.out.println("  ");
+        System.out.println("1. Ano");
+        System.out.println("2. Ne");
+        System.out.println("  ");
+        mladymuz = sc.nextInt();
+        sc.nextLine();
+        switch (mladymuz) {
+            case 1:
+                if (item2 == 1 && kouzlo == 1){
+                    System.out.println("Přišel jsi ke stolu a Petr ti řekl: Co to máš v kapse? Kouzelnou hůlu? Ano? Tak to tě musím o něco poprosit. ");
+                    System.out.println("Mojí dceru unesli duchové a ty se máš, proti nim, čím bránit. ");
+                    System.out.println("Byl by jsi tak hodný a vysvobodil mojí dceru?");
+                    System.out.println("  ");
+                    System.out.println("1. Ano");
+                    System.out.println("2. Ne");
+                    System.out.println("  ");
+                    staryhrad = sc.nextInt();
+                    sc.nextLine();
+                    switch (staryhrad) {
+                        case 1:
+                            this.posedleMesteckoStaryHrad();
+                            break;
+                            case 2:
+                                System.out.println("Tak někdy jindy.");
+                                System.out.println("  ");
+                                System.out.println("Odešel jsi ze zabedněného domu.");
+                                this.posedleMesteckoNamesti();
+                                break;
+                    }
+                }
+                if (item2 == 2){
+                    System.out.println("  ");
+                    System.out.println("Přišel jsi ke stolu a Petr ti řekl: Co to tam máš? Neviditelný plášť? A kde jsi ho našel? Na zemi? ");
+                    System.out.println("Plášť patřil totiž starému čaroději. Bydlel s čarodějnicí v rozpadlé chatě. Když naše městečko napadli zlí duchové, musel s nimi jít bojovat a při boji ho ztratil.");
+                    System.out.println("Kde asi teď je? Jestli ho unesli duchové, tak je určitě na Starém hradě.");
+                    System.out.println("No nic o tom si můžeme popovídat jindy, ale teď ti řeknu něco o neviditelném plášti. Je to velmi vzácná věc a jsou jen 3 na světě. Ve krajních situací ti může pomoci utéct.");
                     System.out.println("  ");
                     System.out.println("Odešel jsi ze zabedněného domu.");
-                    System.out.println("  ");
                     this.posedleMesteckoNamesti();
-                    break;
+                }else{
+                    System.out.println("  ");
+                    System.out.println("Přišel jsi ke stolu a Petr ti řekl: Máš neviditelný plášť? Ne? Tak to ti nemůžu pomoci. Možná ti pomůžou jíní obyvatelé našeho městečka.");
+                    System.out.println("Přijď ke mě až zjistíš víc informací o tvém předmětu.");
+                    System.out.println("Odešel jsi ze zabedněného domu.");
+                    this.posedleMesteckoNamesti();
+                }
+                break;
+            case 2:
+                System.out.println("  ");
+                System.out.println("Odešel jsi ze zabedněného domu.");
+                System.out.println("  ");
+                this.posedleMesteckoNamesti();
+                break;
 
-            }
+        }
 
-        }//hotovo
-        public void posedleMesteckoTajemnaJeskyne(){
-            tajemnajeskyne = 1;
-            System.out.println(" ");
-            System.out.println("Vešel jsi do tajemné jeskyně.");
-            System.out.println("Na zemi sedí malý skřet.");
-            System.out.println("Chceš s ním mluvit?");
-            System.out.println(" ");
-            System.out.println("1. Ano");
-            System.out.println("2. Ne");
-            skret = sc.nextInt();
-            sc.nextLine();
-            switch (skret) {
-                case 1:
-                    if (item2 == 3){
-                        System.out.println(" ");
-                        System.out.println("Promluvi jsi na skřeta a on na tebe vyskočil.");
-                        System.out.println("Setřásl jsi ho ze sebe a on říká: 'Pardón pane já nechtěl. Za to mohou ti duchové , kteří posedli naše městečko.");
-                        System.out.println("Moc se jich bojím a myslel jsem že jste duch. Co to držíte v ruce? Káme, který jste našel, když jsi vešel do městečka? Zajímavé.");System.out.println("Já ten kámen znám! To je kámen vzkřísení. Můžeš jím oživit kohokoliv, kdo zemřel. Použij ho dobře.'");
-                        System.out.println(" ");
-                        System.out.println("Skřeta jsi po tomto rozhovoru nechal být a odešel jsi z jeskyně.");
-                        this.posedleMesteckoNamesti();
-                    }else{
-                        System.out.println(" ");
-                        System.out.println("Promluvi jsi na skřeta a on na tebe vyskočil.");
-                        System.out.println("Setřásl jsi ho ze sebe a on říká: 'Pardón pane já nerchtěl. Za to moho ti duchové , kteří posedli naše městečko.");
-                        System.out.println("Moc se jich bojím a myslel jsem že jste duch.");
-                        System.out.println("Máš tajemný kámen? Ne? Tak to ti nemám jak pomoct. Možná ti pomůžou jíní obyvatelé našeho městečka.'");
-                        System.out.println(" ");
-                        System.out.println("Skřeta jsi po tomto rozhovoru nechal být a odešel jsi z jeskyně.");
-                        this.posedleMesteckoNamesti();
-                    }
-                    break;
-                case 2:
+    }//hotovo
+    public void posedleMesteckoTajemnaJeskyne(){
+        tajemnajeskyne = 1;
+        System.out.println(" ");
+        System.out.println("Vešel jsi do tajemné jeskyně.");
+        System.out.println("Na zemi sedí malý skřet.");
+        System.out.println("Chceš s ním mluvit?");
+        System.out.println(" ");
+        System.out.println("1. Ano");
+        System.out.println("2. Ne");
+        skret = sc.nextInt();
+        sc.nextLine();
+        switch (skret) {
+            case 1:
+                if (item2 == 2 && mladymuz == 1 ){
                     System.out.println(" ");
-                    System.out.println("Skřeta jsi nechal být a odešel jsi z jeskyně.");
-                    this.posedleMesteckoNamesti();
-                    break;
-            }
+                    System.out.println("Promluvi jsi na skřeta a on na tebe vyskočil.");
+                    System.out.println("Setřásl jsi ho ze sebe a on říká: Pardón pane já nechtěl. Za to mohou ti duchové.");
+                    System.out.println("Moc se jich bojím a myslel jsem že jste duch. Co to máte na sobě? Neviditelný plášť, který jste našel, když jsi vešel do městečka? Zajímavé.");
+                    System.out.println("Tak to by jsi mi mohl s něčím pomoct.");
+                    System.out.println("Mého bratra unesli duchové, když se dostali do naší jeskyně. Já se stihl schovat ale on neměl takové Štěstí.");
+                    System.out.println("Myslíš že by jsi ho mohl vysvobodit ze starého hradu?");
+                    System.out.println(" ");
+                    System.out.println("1. Ano");
+                    System.out.println("2. Ne");
+                    staryhrad = sc.nextInt();
+                    sc.nextLine();
+                    switch (staryhrad) {
+                        case 1:
+                            this.posedleMesteckoStaryHrad();
+                            break;
+                            case 2:
+                                System.out.println("Škoda.");
+                                this.posedleMesteckoNamesti();
+                                break;
+                    }
 
-        }//hotovo
-        public void posedleMesteckoHospoda(){
-            hospoda = 1;
-            System.out.println("  ");
-            System.out.println("Vešel jsi do hospody.");
-            System.out.println("U stolu sedí mladý rytíř.");
-            System.out.println("Chceš k němu jít?");
-            System.out.println("  ");
-            System.out.println("1. Ano");
-            System.out.println("2. Ne");
-            System.out.println("  ");
-            rytir = sc.nextInt();
-            sc.nextLine();
-            switch (rytir) {
-                case 1:
-                    System.out.println("  ");
-                    System.out.println("Přišel jsi k rytíři a ten ti řekl: 'Ahoj, už jsi si všiml že je toto městečko posedlé? Ano? Tak co tu děláš? ");
-                    System.out.println("Chceš se dostat z lesa? Tak s tim ti nepomůžu, ale přijď zpátky až se z něho dostaneš. Možná ti pomůžou jíní obyvatelé našeho městečka.'");
-                    System.out.println("  ");
+                }
+                if (item2 == 3){
+                    System.out.println(" ");
+                    System.out.println("Promluvi jsi na skřeta a on na tebe vyskočil.");
+                    System.out.println("Setřásl jsi ho ze sebe a on říká: 'Pardón pane já nechtěl. Za to mohou ti duchové , kteří posedli naše městečko.");
+                    System.out.println("Moc se jich bojím a myslel jsem že jste duch. Co to držíte v ruce? Káme, který jste našel, když jsi vešel do městečka? Zajímavé.");System.out.println("Já ten kámen znám! To je kámen vzkřísení. Můžeš jím oživit kohokoliv, kdo zemřel. Použij ho dobře.'");
+                    System.out.println(" ");
+                    System.out.println("Skřeta jsi po tomto rozhovoru nechal být a odešel jsi z jeskyně.");
                     this.posedleMesteckoNamesti();
-                    break;
-                case 2:
-                    System.out.println("  ");
-                    System.out.println("Odešel jsi z hospody.");
-                    System.out.println("  ");
+                }else{
+                    System.out.println(" ");
+                    System.out.println("Promluvi jsi na skřeta a on na tebe vyskočil.");
+                    System.out.println("Setřásl jsi ho ze sebe a on říká: 'Pardón pane já nerchtěl. Za to moho ti duchové , kteří posedli naše městečko.");
+                    System.out.println("Moc se jich bojím a myslel jsem že jste duch.");
+                    System.out.println("Máš tajemný kámen? Ne? Tak to ti nemám jak pomoct. Možná ti pomůžou jíní obyvatelé našeho městečka.'");
+                    System.out.println("Přijď ke mě až zjistíš víc informací o tvém předmětu.");
+                    System.out.println(" ");
+                    System.out.println("Skřeta jsi po tomto rozhovoru nechal být a odešel jsi z jeskyně.");
                     this.posedleMesteckoNamesti();
-                    break;
-            }
+                }
+                break;
+            case 2:
+                System.out.println(" ");
+                System.out.println("Skřeta jsi nechal být a odešel jsi z jeskyně.");
+                this.posedleMesteckoNamesti();
+                break;
+        }
 
-        }//hotovo (v end gamu se rozšíří)
-        //bonusova lokace (posedle mestecko)
-        public void posedleMesteckoStaryHrad(){}//nedokončeno
+    }//hotovo
+    public void posedleMesteckoHospoda(){
+        hospoda = 1;
+        System.out.println("  ");
+        System.out.println("Vešel jsi do hospody.");
+        System.out.println("U stolu sedí mladý rytíř.");
+        System.out.println("Chceš k němu jít?");
+        System.out.println("  ");
+        System.out.println("1. Ano");
+        System.out.println("2. Ne");
+        System.out.println("  ");
+        rytir = sc.nextInt();
+        sc.nextLine();
+        switch (rytir) {
+            case 1:
+                System.out.println("  ");
+                System.out.println("Přišel jsi k rytíři a ten ti řekl: 'Ahoj, už jsi si všiml že je toto městečko posedlé? Ano? Tak co tu děláš? ");
+                System.out.println("Chceš se dostat z lesa? Tak s tim ti nepomůžu, ale přijď zpátky až se z něho dostaneš. Možná ti pomůžou jíní obyvatelé našeho městečka.'");
+                System.out.println("  ");
+                this.posedleMesteckoNamesti();
+                break;
+            case 2:
+                System.out.println("  ");
+                System.out.println("Odešel jsi z hospody.");
+                System.out.println("  ");
+                this.posedleMesteckoNamesti();
+                break;
+        }
+
+    }//hotovo (v end gamu se rozšíří)
+    //bonusova lokace (posedle mestecko)
+    public void posedleMesteckoStaryHrad(){
+        switch (item2) {
+            case 1:
+
+                break;
+            case 2:
+
+                break;
+            case 3:
+
+                break;
+        }
+    }//nedokončeno
+
+    //cesta do lesa (posedleMestecko)
+    public void posedleMesteckoCestaDoLesa(){}
 
 
 
@@ -462,14 +529,6 @@ public class Hra {
     public void zmrzlePlaniny(){
 
     }
-
-
-
-
-
-
-    //cesta
-    public void cestaDoLesa(){}
 
 
 
