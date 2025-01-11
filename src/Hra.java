@@ -3,7 +3,6 @@ public class Hra {
     static Scanner sc = new Scanner(System.in);
 
 
-
     //zacatek
     public int item1;
 
